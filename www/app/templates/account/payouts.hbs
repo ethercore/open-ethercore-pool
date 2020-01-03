@@ -1,0 +1,32 @@
+<div class="container">
+{{#if config.highcharts.account.enabled}}
+  {{high-charts mode=chartMode chartOptions=chartPayment content=chartData}}
+{{/if}}
+  {{#if model.payments}}
+  <h3>{{t "payout.latest_payouts"}}</h3>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>{{t "payout.time"}}</th>
+          <th>{{t "payout.txid"}}</th>
+          <th>{{t "payout.amount"}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.payments as |tx|}}
+          <tr>
+            <td>{{format-date-locale tx.timestamp}}</td>
+            <td>
+              <a href="{{config.BlockExplorerLink}}/tx/{{tx.tx}}" class="hash" rel="nofollow" target="_blank">{{tx.tx}}</a>
+            </td>
+            <td>{{format-balance tx.amount}} {{config.Unit}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  <h3>{{t "payout.no_payouts_yet"}}</h3>
+  {{/if}}
+</div>

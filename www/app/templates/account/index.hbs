@@ -1,0 +1,41 @@
+<div class="container">
+{{#if config.highcharts.account.enabled}}
+  {{high-charts mode=chartMode chartOptions=chartOptions content=chartData}}
+{{/if}}
+  {{#if model.workers}}
+  <h3>{{t "account.your_workers"}}</h3>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>{{t "account.hashrate"}} ({{t "account.short_average"}})</th>
+          <th>{{t "account.hashrate"}} ({{t "account.long_average"}})</th>
+          <th>{{t "account.earnings.permonth"}}</th>
+          <th>{{t "account.last_share"}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each-in model.workers as |k v|}}
+          <tr class="{{if v.offline "warning" "success"}}">
+            <td>{{k}}</td>
+            <td>{{format-hashrate v.hr}}</td>
+            <td>{{format-hashrate v.hr2}}</td>
+            <td>{{format-number (worker-earnpermonth v.hr netstats.hashrate)}}</td>
+            <td>{{format-relative (seconds-to-ms v.lastBeat)}}</td>
+          </tr>
+        {{/each-in}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+    <h3>{{t "account.no_workers_online"}}</h3>
+  {{/if}}
+  <div class="alert alert-info" role="alert">
+    <span class="sr-only">{{t "account.notice"}}:</span>
+    {{format-html-message "account.notice_html"}}
+  </div>
+  <div class="alert alert-info" role="alert">
+    <strong>{{t "account.json_api_url"}}:</strong> <a href="{{config.ApiUrl}}api/accounts/{{model.login}}">/api/accounts/{{model.login}}</a>
+  </div>
+</div>

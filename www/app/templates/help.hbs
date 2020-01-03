@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="page-header">
+    <h2>Getting Started with {{config.PoolName}} mining</h2>
+  </div>
+  <p class="lead">In order to mine on this pool you need to have an
+    <a href="https://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank">Claymore's Dual Ethereum Miner</a> or an <a href="https://github.com/ethereum-mining/ethminer/releases/latest" rel="nofollow" target="_blank">ethminer</a> installation.
+  </p>
+
+  <h3>Usage examples</h3>
+  <dl class="dl-horizontal">
+    <dt>YOUR_ETC_ADDRESS</dt>
+    <dd>This is your address for payouts, generate one with <a href="https://myetherwallet.com" rel="nofollow" target="_blank">MyEtherWallet</a>
+      or <a href="https://mycrypto.com" rel="nofollow" target="_blank">MyCrypto</a>.<br/>
+      <strong>Example:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
+    </dd>
+    <dt><em>your-worker-1</em><br /><em>your-worker-2</em></dt>
+    <dd>
+      ID of your PC/mining-rig to distinguish it from your other rigs. If you have just one rig, feel free to omit this param.<br />
+      This param must be short alphanumeric string with optional dashes and underscores.<br/>
+      <strong>Example:</strong> <code>worker-1</code>
+    </dd>
+  </dl>
+  <p>
+    <strong>Full example:</strong>
+    <code>
+      EthDcrMiner64.exe -epool {{config.StratumHost}}:{{config.StratumPort}} -ewal 0xb85150eb365e7df0941f0cf08235f987ba91506a -eworker myfarm -allcoins 1 -allpools 1</code>.<br/>
+  </p>
+
+  <h4>Terms of Service</h4>
+  <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
+     Pool owner can't compensate any irreversible losses, but will do his best to prevent worst case.
+  </p>
+</div>
