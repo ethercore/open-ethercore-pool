@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EtherCore Mining Pool</title>
+    <meta name="description" content="High profitability EtherCore mining pool"/>
+    <meta name="keywords" content="ethereum, pool, mining, cryptocurrency"/>
+    <script src="https://cdn.polyfill.io/v1/polyfill.min.js?features=Intl.~locale.en"></script>
+    {{content-for "head"}}
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/open-ethereum-pool.css">
+    {{content-for "head-footer"}}
+  </head>
+  <body>
+    {{content-for "body"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/open-ethereum-pool.js"></script>
+
+    {{content-for "body-footer"}}
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; 2020 EtherCore |
+          Powered by <a href="https://github.com/ethercore/open-ethercore-pool" target="_blank">open-ethercore-pool</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

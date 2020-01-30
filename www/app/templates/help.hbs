@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="page-header">
+    <h1>How To Mine</h1>
+  </div>
+  <p class="lead">In order to mine on this pool you need to have an
+    <a href="https://github.com/ethercore/ethcoreminer/releases/latest" rel="nofollow" target="_blank">EthCoreMiner</a> installation.
+    pointed to<br/><code>stratum1+tcp://YOUR_ERE_ADDRESS.RIG_ID@{{config.StratumHost}}:{{config.StratumPort}}</code>
+  </p>
+  <dl class="dl-horizontal">
+    <dt>YOUR_ERE_ADDRESS</dt>
+    <dd>This is your address for payouts, generate one with <a href="https://wallet.ethercore.org" rel="nofollow" target="_blank">EtherCore Web Wallet</a>.<br/>
+      <strong>Example:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
+    </dd>
+    <dt>RIG_ID</dt>
+    <dd>
+      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
+      This param must be short alphanumeric string with optional dashes and underscores.<br/>
+      <strong>Example:</strong> <code>rig-1</code>
+    </dd>
+  </dl>
+  <p>
+    <strong>Full example:</strong>
+    <code>ethcoreminer.exe -P stratum1+tcp://0xb85150eb365e7df0941f0cf08235f987ba91506a.myfarm@{{config.StratumHost}}:{{config.StratumPort}}</code>.<br/>
+  </p>
+
+  <h4>Terms of Service</h4>
+  <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
+     Pool owner can't compensate any irreversible losses, but will do his best to prevent worst case.
+  </p>
+</div>
